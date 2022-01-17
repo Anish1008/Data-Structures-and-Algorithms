@@ -19,13 +19,19 @@ class prime_factors
                 n=n/2;
             }
         }
+        int c=0;
         //we can skip one element as n is odd now
         for(int i=3;i<=Math.sqrt(n);i=i+2)
         {
             while(n%i==0)
             {
-                System.out.print(i+" ");
+                c=i;
                 n=n/i;
+            }
+            if(c>0)
+            {
+                System.out.print(c+" ");
+                c=0;
             }
         }
         // handles condition when n is itself a prime no
